@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Row from './Row';
+import './style.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App (){
+    
+    const [val,setVal] = useState(['-','-','-','-','-','-','-','-','-'])
+    // const [count,setCount] = useState(0)
+    
+
+    return(
+        <div className='app'>
+            <h1>Tic-Tac-toe</h1>
+            
+            <Row indices={[0,1,2]} val={val} setVal={setVal}  /*count={count} setCount={setCount}*/ />
+            <Row indices={[3,4,5]} val={val} setVal={setVal}  /*count={count} setCount={setCount}*/ />
+            <Row indices={[6,7,8]} val={val} setVal={setVal}  /*count={count} setCount={setCount}*/ />
+
+        </div>
+    )
+
 }
 
-export default App;
+export default App
